@@ -6,10 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 
-<div class="header">
+<div class="preloader">
+    <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor"
+              d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+        </path>
+    </svg>
+</div>
+
+<div class="header" id="result">
     <h1>Добро пожаловать в нашу сеть ветеринарных клиник "Котейка, не болей-ка!"</h1>
     <p><b>Лучшая сеть клиник для животных.</b></p>
 </div>
@@ -40,37 +50,36 @@
         <img class="pic" width="600" height="400" src="img/cat-eats.jpg"  alt="Отзывы наших клиентов">
     </div>
     <div class="main">
-
+        <button id="getForecast">Получить прогноз погоды</button>
+        <div id="forecast"></div>
+        <div class="modal"></div>
         <h2>КОНКУРС</h2>
         <h5>Последние новости, 7 ноября 2020</h5>
-
-
-
-    <p><b><i>Поздравляем победителей нашего конкурса</i></b>
-    </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur earum illo laborum magni minus omnis recusandae vero? Corporis, cum cumque doloremque inventore ipsa perferendis perspiciatis quasi rerum sed voluptas.</p>
+        <p><b><i>Поздравляем победителей нашего конкурса</i></b>
+        </p>
+        <p class="fulltext">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         <ul id="slides">
             <li><img class="slide showing pic" src="img/cute-dog-cat.jpg" alt="Конкурс"></li>
             <li class="slide pic"><img src="img/cat-from-the-camera.jpg" alt="1"></li>
             <li class="slide pic"><img src="img/cat-owner.jpg" alt="2"></li>
         </ul>
+        <br>
+        <div class="news"><h2>ЛУЧШИЙ ВРАЧ НЕДЕЛИ</h2>
+            <h5>Последние новости, 20 сентября 2020</h5>
+            <img class="pic" src="img/cardiologist.jpg" width="600" height="400" alt="Лучший врач недели">
+            <p><b><i>Сегодня мы объявляем лучшего врача недели.</i></b>
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio quidem quod ratione. Ad assumenda, autem consequuntur debitis deleniti illum iure mollitia, nisi non optio perspiciatis quia saepe tempora. Amet consectetur consequatur deleniti, ipsa placeat quis suscipit vel. Aliquid cum dolore doloremque eos impedit iste minus nisi quia sed unde.</p>
             <br>
-    <div class="news"><h2>ЛУЧШИЙ ВРАЧ НЕДЕЛИ</h2>
-    <h5>Последние новости, 20 сентября 2020</h5>
-    <img class="pic" src="img/cardiologist.jpg" width="600" height="400" alt="Лучший врач недели">
-    <p><b><i>Сегодня мы объявляем лучшего врача недели.</i></b>
-    </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio quidem quod ratione. Ad assumenda, autem consequuntur debitis deleniti illum iure mollitia, nisi non optio perspiciatis quia saepe tempora. Amet consectetur consequatur deleniti, ipsa placeat quis suscipit vel. Aliquid cum dolore doloremque eos impedit iste minus nisi quia sed unde.</p>
-    <br>
-    <h2>НАШИ СЧАСТЛИВЫЕ КЛИЕНТЫ</h2>
-    <h5>Последние новости, 16 сентября 2020</h5>
-    <div class="thumb-wrap">
-        <iframe src="https://www.youtube.com/embed/1HygThMLzGs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-    </div>
-    <p><b><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, inventore.</i></b></p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio quidem quod ratione. Ad assumenda, autem consequuntur debitis deleniti illum iure mollitia, nisi non optio perspiciatis quia saepe tempora. Amet consectetur consequatur deleniti, ipsa placeat quis suscipit vel. Aliquid cum dolore doloremque eos impedit iste minus nisi quia sed unde.</p>
-    </div>
+            <h2>НАШИ СЧАСТЛИВЫЕ КЛИЕНТЫ</h2>
+            <h5>Последние новости, 16 сентября 2020</h5>
+            <div class="thumb-wrap">
+                <iframe src="https://www.youtube.com/embed/1HygThMLzGs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+            <p><b><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, inventore.</i></b></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio quidem quod ratione. Ad assumenda, autem consequuntur debitis deleniti illum iure mollitia, nisi non optio perspiciatis quia saepe tempora. Amet consectetur consequatur deleniti, ipsa placeat quis suscipit vel. Aliquid cum dolore doloremque eos impedit iste minus nisi quia sed unde.</p>
+        </div>
     </div>
 </div>
 
@@ -79,5 +88,7 @@
 </div>
 
 <script src="js.js"></script>
+<script src="jquery.js"></script>
+
 </body>
 </html>
